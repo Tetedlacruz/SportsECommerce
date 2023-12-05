@@ -1,0 +1,33 @@
+﻿@model SportsECommerce.Models.Tamanho
+
+@{
+    ViewData["Title"] = "Novo Tamanho";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Novo Tamanho</h1>
+
+<h4></h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-success text-black" />
+                <a class="btn btn-info text-black" asp-action="Index">Voltar</a>
+            </div>
+        </form>    
+        
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
